@@ -937,6 +937,7 @@ typedef struct FloorBank {
 
 /**
  * Number of entries in the map object hash table.
+ * This must be a power of two for index wrapping logic.
  */
 #define TILE_HASHTABLE_SIZE 64
 
@@ -976,11 +977,6 @@ typedef struct TileHashEntry {
    * Pointer to the data associated with the tile.
    */
   void *data;
-  /**
-   * Pointer to the next entry in the bucket. This will only be set if there is
-   * a hashing coflict between two positions.
-   */
-  struct TileHashEntry *next;
 } TileHashEntry;
 
 
@@ -1005,11 +1001,6 @@ typedef struct TileOverrideHashEntry {
    * Override for the tile palette.
    */
   uint8_t palette;
-  /**
-   * Pointer to the next entry in the bucket. This will only be set if there is
-   * a hashing coflict between two positions.
-   */
-  struct TileOverrideHashEntry *next;
 } TileOverrideHashEntry;
 
 /**
