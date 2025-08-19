@@ -307,6 +307,10 @@ static const Sconce sconces[] = {
   { SCONCE_STATIC, MAP_A, 1, 2, true, FLAME_RED },
   { SCONCE_STATIC, MAP_A, 19, 2, true, FLAME_RED },
 
+  // Boss Room
+  { SCONCE_STATIC, MAP_A, 27, 19, true, FLAME_RED },
+  { SCONCE_STATIC, MAP_A, 29, 19, true, FLAME_RED },
+
   { END }
 };
 
