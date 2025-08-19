@@ -119,15 +119,15 @@ void change_hero(void) {
 }
 
 void update_hero_select(void) NONBANKED {
-  if (was_pressed(J_LEFT)) {
+  if (was_pressed(J_LEFT) || was_pressed(J_UP)) {
     selected_hero = selected_hero == 0 ? 3 : selected_hero - 1;
     play_sound(sfx_menu_move);
     change_hero();
-  } else if (was_pressed(J_RIGHT)) {
+  } else if (was_pressed(J_RIGHT) || was_pressed(J_DOWN)) {
     selected_hero = (selected_hero + 1) & 0x03;
     play_sound(sfx_menu_move);
     change_hero();
-  } else if (was_pressed(J_START)) {
+  } else if (was_pressed(J_START) || was_pressed(J_A) || was_pressed(J_B)) {
     play_sound(sfx_hero_selected);
     start_game();
     return;
