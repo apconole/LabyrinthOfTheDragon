@@ -662,6 +662,8 @@ StatusEffectInstance *get_effect_slot(
   PowerTier tier,
   uint8_t duration
 ) {
+  (void)duration;
+
   StatusEffectInstance *e;
   StatusEffect opposing = get_opposing_effect(effect);
 

@@ -129,6 +129,8 @@ static const Sign signs[] = {
 uint8_t active_portal = 0;
 
 static void pull_routing_lever(const Lever *lever) {
+  (void)lever;
+
   const uint8_t a = is_lever_on(LEVER_1) ? 1 : 0;
   const uint8_t b = is_lever_on(LEVER_2) ? 2 : 0;
 
@@ -232,9 +234,6 @@ static const Door doors[] = {
 //------------------------------------------------------------------------------
 // Sconces
 //------------------------------------------------------------------------------
-
-static void on_lit(const Sconce* sconce) {
-}
 
 static const Sconce sconces[] = {
   /*

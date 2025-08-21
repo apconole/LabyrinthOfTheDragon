@@ -451,10 +451,12 @@ typedef struct Map {
   uint8_t *data;
   /**
    * Width for the map (in map tiles).
+   * Must be in the range of 0 - 127 to support various signed comparisons.
    */
   uint8_t width;
   /**
    * Height for the map (in map tiles).
+   * Must be in the range of 0 - 127 to support various signed comparisons.
    */
   uint8_t height;
 } Map;
@@ -613,7 +615,7 @@ typedef struct Chest {
    * @return `true` if the default opening behavior for the chest should be
    *   prevented.
    */
-  const bool (*on_open)(const struct Chest *chest);
+  bool (*on_open)(const struct Chest *chest);
 } Chest;
 
 /**
@@ -686,7 +688,6 @@ typedef enum DoorId {
   DOOR_13 = FLAG16(12),
   DOOR_14 = FLAG16(13),
   DOOR_15 = FLAG16(14),
-  DOOR_16 = FLAG16(15),
 } DoorId;
 
 /**
