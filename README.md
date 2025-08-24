@@ -1,4 +1,4 @@
-# The Monster Manual (GBC)
+# Labyrinth of the Dragon (GBC)
 An 8-bit Adventure RPG with D&D Monsters!
 
 ## How to Build the ROM
